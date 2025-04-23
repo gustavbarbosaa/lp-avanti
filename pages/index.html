@@ -5,9 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LP Avanti</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-  <header></header>
+  <header class="flex flex-col w-full">
+    <div class="flex items-center justify-center text-center bg-[var(--blue-color)] text-white p-2">
+      <p class="font-bold text-sm">Ganhe <span class="p-1 rounded-md bg-[var(--purpple-color)]">R$10,00</span> de desconto no seu primeiro pedido. Utilize o cupom <span class="font-light text-base">DESCONTO10</span></p>
+      <div class="icon-search"></div>
+    </div>
+    <div class="flex items-center justify-around bg-white h-16 shadow-md">
+      <picture>
+        <img src="../assets/images/logo.svg" alt="Logo da Avanti">
+      </picture>
+      <div class="flex border border-[var(--border-gray-color)] rounded-md w-1/3 h-10 items-center justify-around">
+        <input type="text" id="input-pesquisa" class="px-4 w-full outline-none text-black placeholder:text-black" placeholder="Digite aqui o que você procura">
+        <picture class="px-4"><img src="../assets/icons/search.svg" alt="Icone de lupa"></picture>
+      </div>
+      <div class="flex items-center gap-8">
+        <div class="flex items-center justify-center gap-2">
+          <picture>
+            <img src="../assets/icons/user.svg" width="36" alt="Icone de usuário">
+          </picture>
+          <p class="font-semibold text-sm">Olá, <br> Nome cliente!</p>
+        </div>
+        <picture class="relative cursor-pointer">
+          <div class="rounded-full bg-[var(--blue-color)] h-5 w-5 text-center absolute -top-2.5 -right-2.5">
+            <p class="text-white text-sm font-bold">2</p>
+          </div>
+          <img src="../assets/icons/shopping-cart.svg" alt="">
+        </picture>
+      </div>
+    </div>
+  </header>
   <main></main>
   <footer></footer>
 </body>
