@@ -32,14 +32,14 @@ html, body {
   font-family: 'Nunito', sans-serif;
 }
 
-.pagination {
+.pagination, .pagination-end {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-top: 16px;
 }
 
-.pagination .dot {
+.pagination .dot, .pagination-end .dot {
   width: 7px;
   height: 7px;
   background-color: #ddd;
@@ -48,18 +48,18 @@ html, body {
   transition: background-color 0.3s;
 }
 
-.pagination .dot.active {
+.pagination .dot.active, .pagination-end .dot.active {
   background-color: var(--color-font-card);
 }
 
-#carrossel {
+#carrossel, #carrossel-end {
   display: flex;
   overflow-x: auto; 
   scroll-behavior: smooth; 
   gap: 16px; 
 }
 
-#carrossel::-webkit-scrollbar {
+#carrossel::-webkit-scrollbar, #carrossel-end::-webkit-scrollbar {
   display: none; 
 }
 
