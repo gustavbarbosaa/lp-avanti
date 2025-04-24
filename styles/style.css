@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-    --blue-color: #005CFF; 
+    --blue-color: #005CFF;
+    --blue-color-hover :#004cd2;
     --purpple-color: #6220C1;
     --border-gray-color: #DDDDDD;
+    --color-font-card: #303030;
+    --color-tag-price: #5EC0BE;
+    --color-tag: #00264E;
+    --gray-bg-color: #E7E7EA;
     --font-size: 16px;
 }
 
@@ -17,4 +23,45 @@ html, body {
   font-size: 16px;
   line-height: 1.5;
   font-family: 'Nunito Sans', sans-serif;
+}
+
+.text-section-1 {
+  font-family: 'Nunito', sans-serif;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination .dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination .dot.active {
+  background-color: var(--color-font-card);
+}
+
+#carrossel {
+  display: flex;
+  overflow-x: auto; 
+  scroll-behavior: smooth; 
+  gap: 16px; 
+}
+
+#carrossel::-webkit-scrollbar {
+  display: none; 
+}
+
+#card {
+  width: 238px;
+  flex-shrink: 0;
+  scroll-snap-type: start;
 }
