@@ -30,6 +30,7 @@ nextBtn.addEventListener('click', () => {
   if (currentPage < totalPages - 1) {
     currentPage++;
     const scrollAmount = currentPage * carrossel.offsetWidth;
+    console.log(scrollAmount);
     carrossel.scrollTo({
       left: scrollAmount,
       behavior: 'smooth',
@@ -42,6 +43,7 @@ prevBtn.addEventListener('click', () => {
   if (currentPage > 0) {
     currentPage--;
     const scrollAmount = currentPage * carrossel.offsetWidth; 
+    console.log(scrollAmount);
     carrossel.scrollTo({
       left: scrollAmount,
       behavior: 'smooth',
