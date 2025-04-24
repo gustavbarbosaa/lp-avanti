@@ -7,9 +7,12 @@
     --purpple-color: #6220C1;
     --border-gray-color: #DDDDDD;
     --color-font-card: #303030;
+    --gray-600: #C2C2C2;
+    --gray-400: #DEDEDE;
     --color-tag-price: #5EC0BE;
     --color-tag: #00264E;
     --gray-bg-color: #E7E7EA;
+    --title-color: #4F4F4F;
     --font-size: 16px;
 }
 
@@ -25,7 +28,7 @@ html, body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
-.text-section-1 {
+.text-section {
   font-family: 'Nunito', sans-serif;
 }
 
