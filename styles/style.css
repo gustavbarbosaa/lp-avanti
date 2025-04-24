@@ -28,3 +28,40 @@ html, body {
 .text-section-1 {
   font-family: 'Nunito', sans-serif;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination .dot.active {
+  background-color: var(--blue-color);
+}
+
+#carrossel {
+  display: flex;
+  overflow-x: auto; 
+  scroll-behavior: smooth; 
+  gap: 16px; 
+}
+
+#carrossel::-webkit-scrollbar {
+  display: none; 
+}
+
+#card {
+  width: 238px;
+  flex-shrink: 0;
+  scroll-snap-type: start;
+}
