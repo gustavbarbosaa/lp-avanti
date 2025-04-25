@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --blue-color: #005CFF;
+    --blue-color-hover :#004cd2;
+    --purpple-color: #6220C1;
+    --border-gray-color: #DDDDDD;
+    --color-font-card: #303030;
+    --gray-600: #C2C2C2;
+    --gray-400: #DEDEDE;
+    --color-tag-price: #5EC0BE;
+    --color-tag: #00264E;
+    --gray-bg-color: #E7E7EA;
+    --title-color: #4F4F4F;
+    --font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+  width: 100dvw;
+  height: 100dvh;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.text-section {
+  font-family: 'Nunito', sans-serif;
+}
+
+.pagination, .pagination-end {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination .dot, .pagination-end .dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination .dot.active, .pagination-end .dot.active {
+  background-color: var(--color-font-card);
+}
+
+#carrossel, #carrossel-end {
+  display: flex;
+  overflow-x: auto; 
+  scroll-behavior: smooth; 
+  gap: 16px; 
+}
+
+#carrossel::-webkit-scrollbar, #carrossel-end::-webkit-scrollbar {
+  display: none; 
+}
+
+#card {
+  max-width: 238px;
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-type: start;
+}
+
+.section-final {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../assets/images/image.png');
+}
