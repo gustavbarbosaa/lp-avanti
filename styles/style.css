@@ -32,44 +32,28 @@ html, body {
   font-family: 'Nunito', sans-serif;
 }
 
-.pagination, .pagination-end {
+.carrossel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 1rem;
+  padding: 0 2rem;
+  scroll-snap-type: x mandatory;
 }
-
-.pagination .dot, .pagination-end .dot {
-  width: 7px;
-  height: 7px;
-  background-color: #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.carrossel::-webkit-scrollbar {
+  display: none;
 }
-
-.pagination .dot.active, .pagination-end .dot.active {
-  background-color: var(--color-font-card);
+.card {
+  scroll-snap-align: start;
+  min-width: 250px;
+  max-width: 250px;
 }
-
-#carrossel, #carrossel-end {
-  display: flex;
-  overflow-x: auto; 
-  scroll-behavior: smooth; 
-  gap: 16px; 
+.carrossel-section {
+  position: relative;
 }
-
-#carrossel::-webkit-scrollbar, #carrossel-end::-webkit-scrollbar {
-  display: none; 
+#prevBtn, #nextBtn {
+  transition: background 0.3s;
 }
-
-#card {
-  max-width: 238px;
-  width: 100%;
-  flex-shrink: 0;
-  scroll-snap-type: start;
-}
-
 .section-final {
   background-position: center;
   background-repeat: no-repeat;

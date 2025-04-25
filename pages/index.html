@@ -8,8 +8,10 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script src="../js/index.js" defer></script>
   <link rel="stylesheet" href="../styles/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   <header class="fixed flex flex-col w-full z-20">
     <div class="flex items-center justify-center text-center bg-[var(--blue-color)] text-white p-2">
       <p class="font-bold text-sm">Ganhe <span class="p-1 rounded-md bg-[var(--purpple-color)]">R$10,00</span> de desconto no seu primeiro pedido. Utilize o cupom <span class="font-light text-base">DESCONTO10</span></p>
@@ -34,7 +36,7 @@
           </picture>
         </picture>
         <div class="flex border border-[var(--border-gray-color)] rounded-md w-full md:w-1/3 h-10 items-center justify-around">
-          <input type="text" id="input-pesquisa" class="px-4 w-full outline-none text-black placeholder:text-black" placeholder="Digite aqui o que você procura">
+          <input type="text" id="input-pesquisa" class="bg-transparent border-none px-4 w-full outline-none text-black placeholder:text-black" placeholder="Digite aqui o que você procura">
           <picture class="px-4 cursor-pointer" id="search-btn">
             <img src="../assets/icons/search.svg" alt="Icone de lupa">
           </picture>
@@ -75,393 +77,42 @@
   </header>
   <main class="pt-48 md:pt-32 flex flex-col items-center justify-center w-full bg-white">
     <section class="bg-[var(--gray-bg-color)] w-full">
-      <div class="image-bg flex items-center justify-center overflow-hidden">
+      <div class="image-bg flex items-center justify-center overflow-hidden relative">
         <picture>
           <img class="relative -left-28 md:left-0 scale-150 md:scale-100" src="../assets/images/imagem-secao-1.png" alt="Imagem de cadeira com toalhas em cima">
         </picture>
-        <div class="relative -left-20 md:left-0 text-section flex flex-col items-center justify-center text-center font-bold p-4 gap-8">
-          <h1 class="text-4xl md:text-8xl">SUPER<br class="block md:hidden"><span class="font-normal">SALE</span></h1>
+        <div class="relative -left-20 md:left-0 flex flex-col items-center justify-center text-center font-bold p-4 gap-8">
+          <h1 class="text-4xl md:text-8xl">
+            SUPER<br class="block md:hidden">
+            <span class="font-normal">SALE</span>
+          </h1>
+
+          <!-- Frases responsivas -->
           <h3 class="hidden md:block text-[12px] md:text-2xl text-[var(--blue-color)] tracking-widest">ITENS SELECIONADOS COM ATÉ</h3>
-          <h3 class="uppercase block md:hidden text-[12px] md:text-2xl text-[var(--blue-color)] tracking-widest">Selected items up to</h3>
-          <h2 class="text-3xl md:text-6xl text-[var(--blue-color)]">50%OFF</h2>
+          <h3 class="block md:hidden uppercase text-[12px] md:text-2xl text-[var(--blue-color)] tracking-widest">Selected items up to</h3>
+
+          <h2 class="text-3xl md:text-6xl text-[var(--blue-color)]">50% OFF</h2>
         </div>
       </div>
       <div class="carrossel-section flex items-center justify-center bg-white w-full py-8">
         <div class="container-carrossel max-w-7xl w-full relative overflow-hidden">
+    
           <div class="flex items-center justify-between w-full mb-5 px-4">
             <h3 class="font-bold text-xl text-start">Lançamentos</h3>
             <p>Ver mais</p>
           </div>
-          <button id="prevBtn" class="cursor-pointer h-8 w-8 absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
-            <img src="../assets/icons/arrow-left.svg" alt="">
+    
+          <button class="prevBtn cursor-pointer h-8 w-8 absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
+            <img src="../assets/icons/arrow-left.svg" alt="Seta para esquerda">
           </button>
-          <button id="nextBtn" class="cursor-pointer h-8 w-8 absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
-            <img src="../assets/icons/arrow-right.svg" alt="">
+          <button class="nextBtn cursor-pointer h-8 w-8 absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
+            <img src="../assets/icons/arrow-right.svg" alt="Seta para direita">
           </button>
-          <div id="carrossel" class="carrossel px-4 flex items-center justify-center gap-4 transition-all duration-300 ease-in-out">
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
+    
+          <div class="carrossel px-4 flex items-center gap-4 transition-all duration-300 ease-in-out">
           </div>
+    
         </div>
-
       </div>
     </section>
     <section class="bg-white w-full py-8 flex items-center justify-center">
@@ -524,379 +175,23 @@
     </section>
     <section>
       <div class="carrossel-section flex items-center justify-center bg-white w-full py-8">
-        <div class="container-carrossel-end max-w-7xl w-full relative overflow-hidden">
+        <div class="container-carrossel max-w-7xl w-full relative overflow-hidden">
+    
           <div class="flex items-center justify-between w-full mb-5 px-4">
-            <h3 class="font-bold text-xl text-start">Lançamentos</h3>
+            <h3 class="font-bold text-xl text-start">Mais vendidos</h3>
             <p>Ver mais</p>
           </div>
-          <button id="prevBtn-end" class="cursor-pointer h-8 w-8 absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
-            <img src="../assets/icons/arrow-left.svg" alt="">
+    
+          <button class="prevBtn cursor-pointer h-8 w-8 absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
+            <img src="../assets/icons/arrow-left.svg" alt="Seta para esquerda">
           </button>
-          <button id="nextBtn-end" class="cursor-pointer h-8 w-8 absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
-            <img src="../assets/icons/arrow-right.svg" alt="">
+          <button class="nextBtn cursor-pointer h-8 w-8 absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full border border-[var(--blue-color)] p-2 shadow-md">
+            <img src="../assets/icons/arrow-right.svg" alt="Seta para direita">
           </button>
-          <div id="carrossel-end" class="carrossel-end px-4 flex items-center justify-center gap-4 transition-all duration-300 ease-in-out">
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
-            <div id="card" class="flex flex-col items-center rounded-xl border border-[var(--border-gray-color)] p-2 bg-white">
-              <picture class="relative">
-                <img src="../assets/images/homem-card.png" alt="Imagem ilustrativa de um homem sorrindo.">
-                <div class="tag bg-[var(--color-tag)] rounded-tl-xl rounded-lg absolute top-0 left-0 p-2">
-                  <p class="text-[10px] font-bold text-white">NOVO</p>
-                </div>
-              </picture>
-              <div class="title flex flex-col items-start justify-center p-4 gap-2">
-                <h3 class="text-[var(--color-font-card)] text-sm font-normal">Lorem ipsum dolor sit amet <br> consectetuer adipiscing elit</h3>
-                <div class="price flex items-start justify-center gap-2">
-                  <div class="flex flex-col items-center gap-2">
-                    <p class="text-[var(--color-font-card)] text-xs font-normal line-through">R$ 100,00</p>
-                    <p class="text-[var(--color-font-card)] text-base font-bold">R$ 79,90</p>
-                  </div>
-                  <div class="bg-[var(--color-tag-price)] text-white text-[11px] font-bold p-1 rounded-md ">
-                    <p>10% OFF</p>
-                  </div>
-                </div>
-                <p class="text-[var(--color-font-card)] text-xs font-normal">Ou em até 10x de R$ 7,90</p>
-                <button class="bg-[var(--blue-color)] text-white text-xs font-bold p-2 rounded-md w-full hover:bg-[var(--blue-color-hover)] transition duration-300 ease-in-out cursor-pointer">
-                  Comprar
-                </button>
-              </div>
-            </div>
+    
+          <div class="carrossel px-4 flex items-center gap-4 transition-all duration-300 ease-in-out">
           </div>
+    
         </div>
       </div>
     </section>
@@ -941,9 +236,9 @@
           </div>
           <div class="w-full">
             <ul>
-              <li class="flex items-center justify-between px-4 py-2 font-bold border-t border-b border-[var(--border-600)] md:border-none">
+              <li class="flex items-center justify-between px-4 md:px-0 py-2 font-bold border-t border-b border-[var(--border-600)] md:border-none">
                 <h4>Instituicional</h4>
-                <img src="../assets/icons/iconmonstr-arrow-25.png" alt="">
+                <img class="block md:hidden" src="../assets/icons/iconmonstr-arrow-25.png" alt="">
               </li>
               <li class="hidden md:block"><h5>Sobre Nós</h5></li>
               <li class="hidden md:block"><h5>Nossas Lojas</h5></li>
@@ -953,9 +248,9 @@
           </div>
           <div class="w-full">
             <ul>
-              <li class="flex items-center justify-between px-4 py-2 font-bold border-b border-[var(--border-600)] md:border-none">
+              <li class="flex items-center justify-between px-4 md:px-0 py-2 font-bold border-b border-[var(--border-600)] md:border-none">
                 <h4>Central de ajuda</h4>
-                <img src="../assets/icons/iconmonstr-arrow-25.png" alt="">
+                <img class="block md:hidden" src="../assets/icons/iconmonstr-arrow-25.png" alt="">
               </li>
               <li class="hidden md:block"><h5>Fale Conosco</h5></li>
               <li class="hidden md:block"><h5>Frete e Entrega</h5></li>
@@ -966,9 +261,9 @@
           </div>
           <div class="w-full">
             <ul>
-              <li class="flex items-center justify-between px-4 py-2 font-bold border-b border-[var(--border-600)] md:border-none">
+              <li class="flex items-center justify-between px-4 md:px-0 py-2 font-bold border-b border-[var(--border-600)] md:border-none">
                 <h4>Atendimento</h4>
-                <img src="../assets/icons/iconmonstr-arrow-25.png" alt="">
+                <img class="block md:hidden" src="../assets/icons/iconmonstr-arrow-25.png" alt="">
               </li>
               <li class="hidden md:block"><h5><strong>Telefone:</strong>(00)1234-5678</h5></li>
               <li class="hidden md:block"><h5><strong>E-mail:</strong>exemplo@exemplo.com.br</h5></li>
