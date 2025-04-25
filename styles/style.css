@@ -68,3 +68,7 @@ html, body {
   flex-shrink: 0;
   scroll-snap-type: start;
 }
+
+.section-final {
+  background-image: url('../assets/images/image.png');
+}
